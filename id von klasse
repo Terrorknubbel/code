@@ -1,58 +1,14 @@
-<?php
-$res = mysqli_query($con, "SELECT * from produkte");
+ <script type="text/javascript">
 
-$dsatz = mysqli_fetch_assoc($res);
+ var classname = document.getElementsByClassName("Produkt");
 
- ?>
+ var myFunction = function() {
+     var attribute = this.getAttribute("id");
+     document.cookie = "username=" + attribute;
+     window.location.href = "sites/link.php";
+ };
 
-<meta charset="utf-8">
-<img id="Background"src="Bilder/background.png" alt="">
-
-<div id="haupt">
-  <div id="divRabatt">
-    <span id="Rabatt"> Wintersale! 1% auf alles bis zum 06.03.19 ♥</span>
-  </div>
-
-  <div id=main>
-    <img id="mainbanner" src="Bilder/ezgif.com-gif-maker.gif" alt="">
-  </div>
-
-
-  <table class="maint">
-    <tr>
-      <?php
-      $p = 0;
-      $break = 0;
-      while ($erg = $res->fetch_assoc()) {
-
-      $break += 1;
-      if($break == 5){
-        echo "</tr><tr>";
-        $break = 1;
-      };
-      $p += 1;
-      echo"<td class='main'><div class='Kachel' ><img id='$p' class='Produkt' src='Bilder/$erg[ID].png'><hr>$erg[Produkt]<br>Preis: $erg[Preis]€ - Menge: $erg[Menge]</div></td>";
-
-    };
-
-      ?>
-
-      <script type="text/javascript">
-
-      var classname = document.getElementsByClassName("Produkt");
-
-      var myFunction = function() {
-          var attribute = this.getAttribute("id");
-          document.cookie = "username=" + attribute;
-          window.location.href = "sites/link.php";
-      };
-
-      for (var i = 0; i < classname.length; i++) {
-          classname[i].addEventListener('click', myFunction, false);
-      }
-      </script>
-
-    </tr>
-  </table>
-
-</div>
+ for (var i = 0; i < classname.length; i++) {
+     classname[i].addEventListener('click', myFunction, false);
+ }
+ </script>
