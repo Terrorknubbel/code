@@ -1,0 +1,8 @@
+
+  $con = mysqli_connect("", "root");
+  $con->set_charset("utf8");
+  mysqli_select_db($con, "shop");
+
+  $res = mysqli_query($con, "SELECT * from kunde");
+  while ($dsatz = mysqli_fetch_assoc($res)) {
+    $Username = $dsatz["Username"];
