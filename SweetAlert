@@ -1,0 +1,6 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+swal("Sie müssen Administrator sein um diesen Bereich betreten zu dürfen!")
+      .then((value) => {
+        window.location.href = "../index.php";
+      });
