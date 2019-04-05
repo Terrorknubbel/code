@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+  const input = document.querySelector('html');
+  input.addEventListener('keydown', logKey);
+  function logKey(e) {
+    console.log(`${e.code}`);
+  }
+</script>
+</body>
+</html>
